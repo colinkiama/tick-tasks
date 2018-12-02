@@ -1,0 +1,9 @@
+namespace tickTasks.View{
+
+
+    public class DoneView : Gtk.Grid {
+        public ToDoView () {
+            this.add (new Gtk.Button.with_label ("Bye"));
+        }
+    }
+
