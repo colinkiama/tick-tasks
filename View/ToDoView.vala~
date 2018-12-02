@@ -1,0 +1,3 @@
+public class ToDoView : Gtk.View{
+    dd=dddddd
+}
