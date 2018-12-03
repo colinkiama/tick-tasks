@@ -1,4 +1,4 @@
-using tickTasks.View;
+using TickTasks.View;
 
 namespace tickTasks {
     public class MyApp : Gtk.Application {
@@ -22,14 +22,15 @@ namespace tickTasks {
             Gtk.Stack stack = new Gtk.Stack ();
             stack.add_titled (new ToDoView (), "toDo", "To-Do");
             stack.add_titled (new DoneView (), "done", "Done");
+            stack.set_visible_child_name ("toDo");
 
             Gtk.StackSwitcher stack_switcher = new Gtk.StackSwitcher ();
             stack_switcher.set_stack (stack);
 
-            Gtk.Grid grid = new Gtk.Grid ();
-            grid.add (stack_switcher);
-
-            main_window.add (grid);
+            Gtk.Box box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            box.add (stack_switcher);
+            box.pack_start (stack);
+            main_window.add (box);
             main_window.show_all ();
         }
 
